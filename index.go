@@ -24,4 +24,5 @@ func main() {
 
 	summary()
 	basic.DataTypeSample()
+	basic.StatementSample()
 }

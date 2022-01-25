@@ -1,4 +1,4 @@
-// go 基础 - 数字类型，字符串类型，字符串和数字类型的转换，字符串的格式化，枚举类型，类型别名
+// go 基础 - 基本数据类型（数字类型，字符串类型，字符串和数字类型的转换，字符串的格式化，枚举类型，类型别名）
 
 package basic
 
@@ -64,8 +64,7 @@ func dataType_sample2() {
 	var d = `abc
   ijk
     xyz
-\r\n
-`
+\r\n`
 	fmt.Println(d)
 }
 
@@ -91,7 +90,7 @@ func dataType_sample3() {
 	fmt.Println(h, i, j)                       // 3.141592653589793 3.1416 3.1415998935699463
 
 	// 通过 fmt.Sprintf 返回格式化后的字符串（注：fmt.Sprintf() 是不会打印的，只是返回格式化后的字符串）
-	var s = fmt.Sprintf("%.2f\n", math.Pi)
+	var s = fmt.Sprintf("%.2f", math.Pi)
 	fmt.Println(s) // 3.14
 }
 
