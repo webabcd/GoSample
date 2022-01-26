@@ -11,20 +11,21 @@
 //    运行 go mod init GoSample（其中的 GoSample 是你文件夹的名字）
 
 // http://c.biancheng.net/view/91.html
+// func 大小写的说明
 
 package main
 
-import (
-	"GoSample/container"
-)
+import "GoSample/basic"
 
 func main() {
 
-	//	summary()
+	summary()
 
-	// basic.DataTypeSample()
+	basic.DataTypeSample()
 	//	basic.StatementSample()
 
 	// container.ArraySample()
-	container.SliceSample()
+	// container.SliceSample()
+	// container.MapSample()
+	// container.ListSample()
 }

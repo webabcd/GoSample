@@ -5,6 +5,10 @@ package container
 import "fmt"
 
 func ArraySample() {
+	// 注：数组的长度是固定的，即使你不显式初始化，它也会用默认值初始化的
+	var a [3]int
+	fmt.Println(a) // [0 0 0]
+
 	array_sample1()
 	array_sample2()
 }

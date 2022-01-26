@@ -98,9 +98,9 @@ func statement_sample3() {
 	}
 
 	e := []int{1, 2, 3}
-	// for...range 用于遍历数组或切片
+	// for...range 用于遍历数组或切片或字典或字符串
 	for index, value := range e {
-		fmt.Printf("index:%d, value%d\n", index, value)
+		fmt.Printf("index:%d, value:%d\n", index, value)
 	}
 }
 

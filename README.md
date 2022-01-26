@@ -16,3 +16,7 @@
    - container/array.go
 2. 切片（通过范围获取切片，切片的构造，切片数据的添加/复制/删除，数组和切片的区别）
    - container/slice.go
+3. 字典（字典的增删改查和遍历，以及字典的线程安全）
+   - container/map.go
+4. 列表（列表的增删改查和遍历）
+   - container/list.go

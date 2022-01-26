@@ -7,6 +7,7 @@ import (
 	"math"
 	"reflect"
 	"strconv"
+	"strings"
 )
 
 func DataTypeSample() {
@@ -66,6 +67,11 @@ func dataType_sample2() {
     xyz
 \r\n`
 	fmt.Println(d)
+
+	// 判断字符串是否相同（0 代表相同）
+	fmt.Println(strings.Compare("abc", "abc")) // 0
+	// 判断字符串是否相同（忽略大小写）
+	fmt.Println(strings.EqualFold("ABC", "abc")) // true
 }
 
 // 字符串和数字类型的转换，字符串的格式化
