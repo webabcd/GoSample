@@ -12,17 +12,19 @@
 
 // http://c.biancheng.net/view/91.html
 
-// 语句中不能用 { 单独一行，也说明一下
-
 package main
 
 import (
-	"GoSample/basic"
+	"GoSample/container"
 )
 
 func main() {
 
-	summary()
-	basic.DataTypeSample()
-	basic.StatementSample()
+	//	summary()
+
+	// basic.DataTypeSample()
+	//	basic.StatementSample()
+
+	// container.ArraySample()
+	container.SliceSample()
 }

@@ -96,6 +96,12 @@ func statement_sample3() {
 		fmt.Println(d)
 		d++
 	}
+
+	e := []int{1, 2, 3}
+	// for...range 用于遍历数组或切片
+	for index, value := range e {
+		fmt.Printf("index:%d, value%d\n", index, value)
+	}
 }
 
 // goto

@@ -21,20 +21,20 @@ func DataTypeSample() {
 func dataType_sample1() {
 	// int、int8、int16、int32、int64, uint、uint8、uint16、uint32、uint64（其中的 int 和 uint 是占 32 位还是占 64 位，要看 cpu 是 32 位的还是 64 位的）
 	// float32、float64
-	// bool
+	// bool（false, true）
 
 	// 格式化打印
 	fmt.Printf("%.2f\n", math.Pi) // 3.14
 
 	// 整型（'\x..' 以十六进制的方式定义整型）
 	var a, b uint8 = 97, '\x61'
-	// byte 类型（代表一个字节）其实就是 uint8 类型
+	// byte 类型（表示一个字节）其实就是 uint8 类型
 	var c, d byte = 97, '\x61'
 	// %d 整型，%x 十六进制, %c 字符
 	fmt.Printf("%d, %d, %x, %x, %c, %c, %d, %d, %x, %x, %c, %c\n", a, b, a, b, a, b, c, d, c, d, c, d) // 97, 97, 61, 61, a, a, 97, 97, 61, 61, a, a
 
 	var e int32 = '\u738b'
-	// rune 类型（代表一个 unicode 编码）其实就是 int32 类型
+	// rune 类型（表示一个 unicode 编码）其实就是 int32 类型
 	var f rune = '\u738b'
 	// %d 整型，%x 十六进制, %c 字符
 	fmt.Printf("%d, %x, %c，%d, %x, %c\n", e, e, e, f, f, f) // 29579, 738b, 王， 29579, 738b, 王
@@ -79,19 +79,34 @@ func dataType_sample3() {
 	var c int64 = 97
 	var d = strconv.FormatInt(c, 10)       // int64 按十进制转为字符串
 	var e = strconv.FormatInt(c, 16)       // int64 按十六进制转换为字符串
-	var f, _ = strconv.ParseInt(d, 10, 32) // 字符串按十进转换为 int32（最后一个参数代表转换后的 int 的位数）
-	var g, _ = strconv.ParseInt(e, 16, 64) // 字符串按十六进制转换为 int64（最后一个参数代表转换后的 int 的位数）
+	var f, _ = strconv.ParseInt(d, 10, 32) // 字符串按十进转换为 int32（最后一个参数表示转换后的 int 的位数）
+	var g, _ = strconv.ParseInt(e, 16, 64) // 字符串按十六进制转换为 int64（最后一个参数表示转换后的 int 的位数）
 	fmt.Println(c, d, e, f, g)             // 97 97 61 97 97
 
 	// int 和 float 相互转换
 	var h = math.Pi
 	var i = strconv.FormatFloat(h, 'f', 4, 64) // float64 转换为字符串，保留 4 位小数（四舍五入）
-	j, _ := strconv.ParseFloat(i, 32)          // 字符串转换为 float32（最后一个参数代表转换后的 float 的位数）
+	j, _ := strconv.ParseFloat(i, 32)          // 字符串转换为 float32（最后一个参数表示转换后的 float 的位数）
 	fmt.Println(h, i, j)                       // 3.141592653589793 3.1416 3.1415998935699463
 
 	// 通过 fmt.Sprintf 返回格式化后的字符串（注：fmt.Sprintf() 是不会打印的，只是返回格式化后的字符串）
-	var s = fmt.Sprintf("%.2f", math.Pi)
-	fmt.Println(s) // 3.14
+	var k = fmt.Sprintf("%.2f", math.Pi)
+	fmt.Println(k) // 3.14
+
+	// %% - 输出 %
+	// %d - 十进制
+	// %b - 二进制
+	// %o - 八进制
+	// %x - 十六进制（小写）
+	// %X - 十六进制（大写）
+	// %c - 字符
+	// %s - 字符串
+	// %f - 浮点型
+	// %v - 按值的方式输出
+	// %T - 数据类型
+	// %p - 指针地址
+	var l = fmt.Sprintf("%%, %d, %b, %o, %x, %X, %c, %s, %.2f, %v, %T, %p", 'z', 'z', 'z', 'z', 'z', 'z', "z", 3.14159, [3]int{1, 2, 3}, [3]int{1, 2, 3}, &a)
+	fmt.Println(l) // %, 122, 1111010, 172, 7a, 7A, z, z, 3.14, [1 2 3], [3]int, 0xc000014118
 }
 
 // 枚举类型
@@ -128,17 +143,3 @@ func dataType_sample5() {
 	var x MyType = 100
 	fmt.Println(x, reflect.TypeOf(x)) // 100 int32
 }
-
-/*
-// 数组类型，放到容器那里讲
-func sample5() {
-
-		var a [5]int = [5]int{1, 2, 3, 4, 5}
-		b := [5]int{0: 1, 4: 5}
-		c := [...]int{1, 2, 3, 4, 5}
-		c.
-
-		fmt.Println(a, b, c, c[len(c)-1]) // [1 2 3 4 5] [1 0 0 0 5] [1 2 3 4 5] 5
-
-}
-*/
