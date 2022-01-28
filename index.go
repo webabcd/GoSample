@@ -20,7 +20,9 @@
 
 package main
 
-import "GoSample/basic"
+import (
+	"GoSample/advanced"
+)
 
 func main() {
 
@@ -28,7 +30,7 @@ func main() {
 
 	// basic.DataTypeSample()
 	// basic.StatementSample()
-	basic.PointerSample()
+	// basic.PointerSample()
 
 	// container.ArraySample()
 	// container.SliceSample()
@@ -39,4 +41,8 @@ func main() {
 	// oop.Function2Sample()
 	// oop.Function3Sample()
 	// oop.Struct1Sample()
+	// oop.Struct2Sample()
+	// oop.Struct3Sample()
+
+	advanced.ReceiverSample()
 }
