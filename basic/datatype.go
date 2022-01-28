@@ -48,6 +48,12 @@ func dataType_sample1() {
 	// real() - 取复数的实数部分
 	// imag() - 取复数的虚数部分
 	fmt.Println(real(k), imag(k)) // 6.28 1.2
+
+	var l int               // 默认值是 0
+	var m float32           // 默认值是 0
+	var n bool              // 默认值是 false
+	var o string            // 默认值是空字符串
+	fmt.Println(l, m, n, o) // 0 0 false
 }
 
 // 字符串类型

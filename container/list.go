@@ -19,11 +19,12 @@ func ListSample() {
 func list_sample1() {
 	// 声明一个 List（此处的 a 是一个指针）
 	a := list.New()
-	// 声明一个 List（此处的 b 是指针所指的数据）
+	// 声明一个 List（此处的 b 是指针指向的值）
 	var b list.List
 	fmt.Printf("%p, %p\n", a, &b) // 0xc000110480, 0xc0001104b0
 
 	// 在尾部添加一个数据
+	// a 是指针，这里不是应该写成 (*a).PushBack("a") 吗？当然可以这么写，不过由于 go 支持语法糖（syntactic sugar）技术，他会自动转换的，所以你也可以按如下方式写
 	a.PushBack("a") // a
 	// 在开头添加一个数据
 	a.PushFront(0) // 0 a
