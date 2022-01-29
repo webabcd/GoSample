@@ -2,7 +2,7 @@
 // 注：
 // 1、go 是通过 GC 清理的
 // 2、go 是通过开头字母大小写来控制可见性的
-//    如果定义的常量、变量、类型、接口、结构体、结构体成员、函数等的名称是大写字母开头，则表示能被其它包访问或调用，非大写字母开头就只能在包内使用
+//    如果定义的常量、变量、类型、接口、接口中的方法，结构体、结构体中的成员、函数等的名称是大写字母开头，则表示能被其它包访问或调用，非大写字母开头就只能在包内使用
 
 package main
 
@@ -27,7 +27,7 @@ func summary_sample1() {
 	var c, d int = 3, 4 // c, d int 的意思是 c 和 d 都是 int 类型
 	var (
 		e int = 5
-		f int = 6
+		f     = 6
 	)
 
 	// 声明的简短格式（必须要初始化，必须要由编译器推导类型，只能在函数内部声明）
@@ -61,16 +61,27 @@ func summary_sample1() {
 
 // nil
 func summary_sample2() {
-	// nil 和 nil 是不能做相等判断的，下面这句会报错
+	// nil 和 nil 是不能做相等判断的，下面这句会编译时报错
 	// fmt.Println(nil == nil)
 
 	// 指针的默认值是 nil
 	var a *int
-	var b *string
-	// a 和 b 都是 nil（但是他们是不能做相等判断的）
-	fmt.Println(a, b) // <nil> <nil>
-	// a 和 b 的地址都是 0x0
-	fmt.Printf("%p, %p\n", a, b) // 0x0, 0x0
-	// 可以判断地址是否相等
-	fmt.Println(fmt.Sprintf("%p", a) == fmt.Sprintf("%p", b)) // true
+	var b *int
+	var c *string
+	// 指针 a, b, c 本身的值都是 0x0
+	fmt.Printf("%p, %p, %p\n", a, b, c) // 0x0, 0x0, 0x0
+	// 判断指针是否为 nil 就用 == 即可
+	fmt.Println(a == nil, b == nil, c == nil) // true true true
+	// 指向相同类型的指针，如果他们都是 nil 则可以做相等判断（切片类型除外）
+	fmt.Println(a == b) // true
+
+	// 指向不同类型的指针，即使他们都是 nil 也不能做相等判断，下面这句会编译时报错
+	// fmt.Println(a == c)
+
+	var d []int
+	var e []int
+	// 可以通过 == 判断某一个切片是否为 nil
+	fmt.Println(d == nil, e == nil) // true true
+	// 但是因为切片类型是不能通过 == 做相等判断的，所以即使两个切片类型的指针都是 nil 也不能做相等判断，下面这句会编译时报错
+	// fmt.Println(d == e)
 }

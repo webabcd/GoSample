@@ -1,4 +1,5 @@
 // go 基础 - 语句（if/else, switch, for, continue, break, goto）
+// 注：需要用到 {} 的语句，{ 必须要与语句在同一行，否则会报错
 
 package basic
 
@@ -21,7 +22,7 @@ func statement_sample1() {
 	a := rand.New(rand.NewSource(time.Now().UnixNano())).Intn(3)
 	fmt.Printf("a: %d\n", a)
 
-	if a == 0 { // { 必须和关键字在同一行，否则会报错
+	if a == 0 { // { 必须和关键字在同一行，否则会报错。另外，即使 if 后只有一条语句也不能省略 {}
 		fmt.Println("a == 0")
 	} else if a == 1 { // } 必须和 else if 在同一行，否则会报错
 		fmt.Println("a == 1")

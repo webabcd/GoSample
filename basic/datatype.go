@@ -1,4 +1,4 @@
-// go 基础 - 基本数据类型（数字类型，字符串类型，字符串和数字类型的转换，字符串的格式化，枚举类型，类型别名）
+// go 基础 - 基本数据类型（数字类型，字符串类型，字符串和数字类型的转换，字符串的格式化，枚举类型，类型别名，自定义类型）
 
 package basic
 
@@ -16,6 +16,7 @@ func DataTypeSample() {
 	dataType_sample3()
 	dataType_sample4()
 	dataType_sample5()
+	dataType_sample6()
 }
 
 // 数字类型
@@ -82,10 +83,10 @@ func dataType_sample2() {
 
 // 字符串和数字类型的转换，字符串的格式化
 func dataType_sample3() {
-	// int32 类型转换为 int64 类型
+	// int32 类型转换为 float32 类型
 	var a int32 = 10
-	var b = int64(a)
-	fmt.Println(reflect.TypeOf(a), reflect.TypeOf(b)) // int32 int64
+	var b = float32(a)
+	fmt.Println(reflect.TypeOf(a), reflect.TypeOf(b)) // int32 float32
 
 	// int 和 string 相互转换
 	var c int64 = 97
@@ -149,9 +150,21 @@ func dataType_sample4() {
 
 // 类型别名
 func dataType_sample5() {
-	// 定义类型别名
+	// 定义类型别名（MyType 和 int32 是同一类型）
 	type MyType = int32
 	// 使用类型别名
 	var x MyType = 100
 	fmt.Println(x, reflect.TypeOf(x)) // 100 int32
+}
+
+// 自定义类型
+func dataType_sample6() {
+	// 定义自定义类型（MyType 和 int32 不是同一类型）
+	type MyType int32
+	var x MyType = 100
+	// 因为自定义类型与原类型不是同一个类型，所以下面这句是会报错的
+	// var y int = x
+	// 自定义类型与原类型之间可以像下面这样做转换
+	var y int = int(x)
+	fmt.Printf("%v, %v, %T, %T", x, y, x, y) // 100, 100, basic.MyType, int
 }

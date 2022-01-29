@@ -35,6 +35,9 @@ func slice_sample1() {
 	fmt.Println(reflect.TypeOf(a)) // [5]int
 	// a[:] 是切片，它的长度是可变的
 	fmt.Println(reflect.TypeOf(a[:])) // []int
+
+	// 注：切片之间是不能通过 == 做相等判断的，下面这句会编译时报错
+	// fmt.Println(a[:] == a[:])
 }
 
 // 构造切片

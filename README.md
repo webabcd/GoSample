@@ -6,12 +6,14 @@
    - summary.go
 
 #### go 基础
-1. 基本数据类型（数字类型，字符串类型，字符串和数字类型的转换，字符串的格式化，枚举类型，类型别名）
+1. 基本数据类型（数字类型，字符串类型，字符串和数字类型的转换，字符串的格式化，枚举类型，类型别名，自定义类型）
    - basic/datatype.go
 2. 语句（if/else, switch, for, continue, break, goto）
    - basic/statement.go
 3. 指针
    - basic/pointer.go
+4. 通过接收器（receiver）为任意类型定义方法，即为指定类型扩展方法
+   - basic/receiver.go
 
 #### go 容器
 1. 数组（一维数组，多维数组，数组元素的获取和设置，数组的遍历）
@@ -40,7 +42,7 @@
    - oop/package1.go
    - oop/pkg1/go.go
    - oop/pkg1/pkg2/go.go
-
-#### go 高级
-1. 通过接收器（receiver）为任意类型定义方法，即为指定类型扩展方法
-   - advanced/receiver.go
+8. 接口（接口的定义，接口的实现，接口的使用）
+   - oop/interface1.go
+9. 接口（空接口，类型断言，通过实现内置的 error 接口实现自定义错误类型）
+   - oop/interface2.go

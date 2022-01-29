@@ -19,13 +19,11 @@
 
 package main
 
-import (
-	"GoSample/oop"
-)
+import "GoSample/oop"
 
 func main() {
 
-	summary()
+	// summary()
 
 	// basic.DataTypeSample()
 	// basic.StatementSample()
@@ -42,7 +40,8 @@ func main() {
 	// oop.Function3Sample()
 	// oop.Struct1Sample()
 	// oop.Struct2Sample()
-	oop.Struct3Sample()
-	// oop.Interface1Sample()
+	// oop.Struct3Sample()
 	// oop.Package1Sample()
+	// oop.Interface1Sample()
+	oop.Interface2Sample()
 }

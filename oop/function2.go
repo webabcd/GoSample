@@ -57,6 +57,10 @@ func function2_sample2() {
 		fmt.Println(result) // hello: webabcd
 	})
 
+	// 把匿名函数的定义和调用放到一起
+	func() {
+		fmt.Println("把匿名函数的定义和调用放到一起") // 把匿名函数的定义和调用放到一起
+	}()
 }
 
 // 此函数的第 2 个参数是一个函数类型，其用于实现回调逻辑

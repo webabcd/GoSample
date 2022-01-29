@@ -48,6 +48,9 @@ func struct1_sample1() {
 
 	// 使用结构体中的成员
 	fmt.Println(d.a, d.b, d.c) // 0 abc xyz
+
+	// 结构体的相等判断：如果两个结构体中的所有成员的值都相同，则这两个结构体是相等的
+	fmt.Println(*b == *c, *b == *d) // true false
 }
 
 // 定义一个结构体
