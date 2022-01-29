@@ -34,8 +34,12 @@
    - oop/struct1.go
 5. 结构体（内嵌结构体，内嵌结构体实现类似继承的效果，内嵌匿名结构体，内嵌类型）
    - oop/struct2.go
-6. 结构体（为结构体定义方法）
+6. 结构体（为结构体定义方法，使用工厂模式初始化结构体）
    - oop/struct3.go
+7. 包
+   - oop/package1.go
+   - oop/pkg1/go.go
+   - oop/pkg1/pkg2/go.go
 
 #### go 高级
 1. 通过接收器（receiver）为任意类型定义方法，即为指定类型扩展方法

@@ -1,4 +1,4 @@
-// go 面向对象 - 结构体（为结构体定义方法）
+// go 面向对象 - 结构体（为结构体定义方法，使用工厂模式初始化结构体）
 
 package oop
 
@@ -9,6 +9,8 @@ func Struct3Sample() {
 	struct3_sample1()
 	// 为结构体指针指向的值添加方法
 	struct3_sample2()
+	// 使用工厂模式初始化结构体
+	struct3_sample3()
 }
 
 func struct3_sample1() {
@@ -50,4 +52,23 @@ type struct32 struct {
 // 这里是为结构体指针指向的值添加方法
 func (s struct32) add(other struct32) struct32 {
 	return struct32{s.x + other.x, s.y + other.y}
+}
+
+// 演示如何使用工厂模式初始化结构体
+func struct3_sample3() {
+	var a *struct33 = create_struct33("webabcd")
+	a.age = 40
+	fmt.Println(a) // &{webabcd 40}
+}
+
+type struct33 struct {
+	name string
+	age  int
+}
+
+// 工厂模式
+func create_struct33(name string) *struct33 {
+	return &struct33{
+		name: name,
+	}
 }

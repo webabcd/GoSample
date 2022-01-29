@@ -17,7 +17,9 @@ func struct1_sample1() {
 	a.a = 0
 	a.b = "abc"
 	a.c = "xyz"
-	fmt.Println(a) // {0 abc xyz}
+	fmt.Printf("%v\n", a)  // {0 abc xyz}
+	fmt.Printf("%+v\n", a) // {a:0 b:abc c:xyz}
+	fmt.Printf("%#v\n", a) // oop.struct11{a:0, b:"abc", c:"xyz"}
 
 	// 用 new() 声明的结构体返回的是指针
 	b := new(struct11)
