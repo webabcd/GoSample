@@ -46,3 +46,9 @@
    - oop/interface1.go
 9. 接口（空接口，类型断言，通过实现内置的 error 接口实现自定义错误类型）
    - oop/interface2.go
+
+#### go 高级
+1. 多线程和线程同步 goroutine
+   - advanced/goroutine1.go
+2. 线程间通信 channel/select
+   - advanced/goroutine2.go

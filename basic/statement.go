@@ -14,6 +14,19 @@ func StatementSample() {
 	statement_sample2()
 	statement_sample3()
 	statement_sample4()
+
+	var a int = 123
+	// {} 是一个独立的块，可以访问父级的变量，但是无法访问同级或子级 {} 中的变量
+	{
+		var b int = 456
+		fmt.Println(a, b) // 123 456
+	}
+	{
+		var b int = 456
+		fmt.Println(a, b) // 123 456
+	}
+	// 下面这句会报错，因为无法访问子级 {} 中的变量
+	// fmt.Println(b)
 }
 
 // if/else
