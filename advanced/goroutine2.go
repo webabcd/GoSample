@@ -106,11 +106,12 @@ func goroutine2_sample2() {
 		close(ch)
 	}()
 
+	time.Sleep(time.Second)
 	for i := 0; i < 5; i++ {
 		// 通过 <-channel 从缓冲区接收数据（即读数据）
 		// 这是要阻塞的，直到读出为止
 		data := <-ch
-		fmt.Println("已经读出", data)
+		fmt.Println("已经读出", data, len(ch)) // len() 可以获取 channel 的缓冲区中的元素的数量
 	}
 
 	// 判断 channel 是否关闭了（返回 false 则说明 channel 已经关闭了）
@@ -129,11 +130,11 @@ func goroutine2_sample2() {
 		已经写入 3
 		准备写入 4
 		已经写入 4
-		已经读出 0
-		已经读出 1
-		已经读出 2
-		已经读出 3
-		已经读出 4
+		已经读出 0 4
+		已经读出 1 3
+		已经读出 2 2
+		已经读出 3 1
+		已经读出 4 0
 		channel状态 false
 	*/
 }
