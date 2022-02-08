@@ -38,13 +38,15 @@
    - oop/struct2.go
 6. 结构体（为结构体定义方法，使用工厂模式初始化结构体）
    - oop/struct3.go
-7. 包
+7. 结构体（结构体标签，结构体和 json 互相转换）
+   - oop/struct4.go
+8. 包
    - oop/package1.go
    - oop/pkg1/go.go
    - oop/pkg1/pkg2/go.go
-8. 接口（接口的定义，接口的实现，接口的使用）
+9. 接口（接口的定义，接口的实现，接口的使用）
    - oop/interface1.go
-9. 接口（空接口，类型断言，通过实现内置的 error 接口实现自定义错误类型）
+10. 接口（空接口，类型断言，通过实现内置的 error 接口实现自定义错误类型）
    - oop/interface2.go
 
 #### go 高级

@@ -39,6 +39,7 @@ func main() {
 	oop.Struct1Sample()
 	oop.Struct2Sample()
 	oop.Struct3Sample()
+	oop.Struct4Sample()
 	oop.Package1Sample()
 	oop.Interface1Sample()
 	oop.Interface2Sample()

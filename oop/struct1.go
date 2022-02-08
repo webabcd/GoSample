@@ -17,6 +17,10 @@ func struct1_sample1() {
 	a.a = 0
 	a.b = "abc"
 	a.c = "xyz"
+	// 输出结构体信息
+	// %v 仅输出字段的值
+	// %+v 输出字段的名称和字段的值
+	// %#v 输出结构体类型，以及字段的名称和字段的值
 	fmt.Printf("%v\n", a)  // {0 abc xyz}
 	fmt.Printf("%+v\n", a) // {a:0 b:abc c:xyz}
 	fmt.Printf("%#v\n", a) // oop.struct11{a:0, b:"abc", c:"xyz"}

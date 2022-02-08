@@ -80,14 +80,14 @@ func reflect_Sample2() {
 	fmt.Println(f.FieldByName("xxx").IsValid(), f.FieldByName("ptr").IsNil()) // false true
 
 	// 通过反射修改结构体的指定成员的值
-	// 下面这种方式会报错，虽然传入的是 e 的指针，是可被寻址的，但是需要修改的成员是不可导出的，即小写开头的
+	// 下面这种方式会报错，虽然传入的是 e 的指针，是可被寻址的，但是修改的成员是不可导出的，即小写开头的
 	// reflect.ValueOf(&e).Elem().FieldByName("salary").SetFloat(5000)
-	// 下面这种方式是正确的，也就是说传入的是 e 的指针，是可被寻址的，并且需要修改的成员是可导出的，即大写开头的
+	// 下面这种方式是正确的，也就是说传入的是 e 的指针，是可被寻址的，并且修改的成员是可导出的，即大写开头的
 	reflect.ValueOf(&e).Elem().FieldByName("SalaryExpected").SetFloat(5000)
 	fmt.Println(e.SalaryExpected) // 5000
 
 	// 通过反射调用结构体的方法
-	// 拿到方法
+	// 拿到方法，必须是可导出的，即大写开头的
 	method := reflect.ValueOf(&e).MethodByName("Show")
 	// 构造参数
 	args := []reflect.Value{reflect.ValueOf("v1"), reflect.ValueOf("v2")}
